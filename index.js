@@ -72,6 +72,12 @@ bot.on('message', message => {
 
         message.channel.send(embed)
     }
+
+    bot.on("guildMemberAdd", function(message){
+        let channel = member.guild.channel.cache.find(ch => ch.name === "『🛬』・willkommen");
+        channel.send(member.displayname + " Ist dem Server beigetreten!❤");
+    })
+         
 })
 
 bot.login(process.env.token)
